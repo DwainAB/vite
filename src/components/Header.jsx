@@ -4,14 +4,16 @@ export default function Header(){
     return(
         <header>
             <a href="/">
-                <img src={logo} alt="" />
+                <img src={logo} alt="image d'un mexicain qui fait de la guitarre" />
             </a>
 
-            <ul>
-                <li>
-                    <a href="/">Accueil</a>
-                </li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Accueil</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
     )
 }
