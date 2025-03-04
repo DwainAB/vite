@@ -5,7 +5,7 @@ import "../assets/css/header.scss"
 export default function Header() {
     return (
         <header>
-            <Navbar expand="lg">
+            <Navbar className="bg-body-tertiary" expand="lg">
                 <Container>
                     <Navbar.Brand href="/">
                         <img 
