@@ -35,8 +35,8 @@ function App() {
         <Container className="py-5">
           <Row>
             {dishes.map((item, index)=>(
-              <Col md={4}>
-                <Dish key={index} name={item.name} img={item.img} price={item.price}  isNew={item.isNew} />
+              <Col key={index} md={4}>
+                <Dish name={item.name} img={item.img} price={item.price}  isNew={item.isNew} />
               </Col>
             ))}
           </Row>
