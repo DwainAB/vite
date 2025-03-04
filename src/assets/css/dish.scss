@@ -1,6 +1,16 @@
 .card {
+  position: relative;
+
+
     &-img-top {
       height: 250px;
       object-fit: cover;
+    }
+
+    .badge{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding-block: 10px;
     }
   }
