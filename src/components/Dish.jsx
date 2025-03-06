@@ -1,7 +1,9 @@
-import { Card, Badge } from 'react-bootstrap';
+import { Card, Badge, Button } from 'react-bootstrap';
 import "../assets/css/dish.scss"
 
-export default function Dish ({name, img, price, isNew}){
+export default function Dish ({name, img, price, isNew, addToCart}){
+
+
     return(
     <Card>
         {isNew && <Badge bg="primary">Nouveau</Badge>}
@@ -9,8 +11,9 @@ export default function Dish ({name, img, price, isNew}){
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            {price}
+            {price}€
           </Card.Text>
+          <Button variant="dark" onClick={addToCart}>Ajouter au panier</Button>
         </Card.Body>
       </Card>
     )
