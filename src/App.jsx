@@ -15,19 +15,22 @@ function App() {
       name:"Tacos à l’unité",
       img:"https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg",
       price: 3,
-      isNew: true
+      isNew: true,
+      stock: 12
     },
     {
       name:"Enchiladas",
       img:"https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg",
       price: 12,
-      isNew: false
+      isNew: false,
+      stock: 0
     },
     {
       name:"Mole poblano",
       img:"https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg",
       price: 15,
-      isNew: false
+      isNew: false,
+      stock: 5
     }
 
   ]
@@ -38,6 +41,8 @@ function App() {
     
   }
 
+  const filteredDishes = dishes.filter(dish => dish.stock > 0)
+
 
   return (
     <>
@@ -45,7 +50,7 @@ function App() {
         <Container className="py-5">
         <Button variant="dark" className="mb-5" onClick={handleShowNewOnly}>Nouveautés seulement</Button>
           <Row>
-            {dishes.map((item, index)=>(
+            {filteredDishes.map((item, index)=>(
               <Col key={index} md={4}>
                 <Dish name={item.name} img={item.img} price={item.price}  isNew={item.isNew} />
               </Col>
