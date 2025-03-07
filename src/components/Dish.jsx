@@ -1,7 +1,7 @@
 import { Card, Badge, Button } from 'react-bootstrap';
 import "../assets/css/dish.scss"
 
-export default function Dish ({name, img, price, isNew}){
+export default function Dish ({name, img, price, isNew, addToCart}){
 
 
     return(
@@ -13,7 +13,7 @@ export default function Dish ({name, img, price, isNew}){
           <Card.Text>
             {price}€
           </Card.Text>
-          <Button variant="dark" onClick={() => alert(`Le plat ${name} est maintenant dans votre panier`)}>Ajouter au panier</Button>
+          <Button variant="dark" onClick={addToCart}>Ajouter au panier</Button>
         </Card.Body>
       </Card>
     )

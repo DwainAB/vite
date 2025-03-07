@@ -2,7 +2,7 @@ import { Container, Navbar, Nav } from "react-bootstrap"
 import logo from "../assets/logo/logo.webp"
 import "../assets/css/header.scss" 
 
-export default function Header() {
+export default function Header({cartCount}) {
     return (
         <header>
             <Navbar className="bg-body-tertiary" expand="lg">
@@ -18,7 +18,7 @@ export default function Header() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav>
                             <Nav.Link href="/">Accueil</Nav.Link>
-                            <Nav.Link href="/panier">Panier</Nav.Link>
+                            <Nav.Link href="/panier">Panier {cartCount}</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

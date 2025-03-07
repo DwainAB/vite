@@ -9,6 +9,7 @@ import { useState } from "react";
 
 function App() {
   const [showNewOnly, setShowNewOnly] = useState(false)
+  const [cartCount, setCartCount] = useState(0)
 
   const dishes =[
     {
@@ -35,6 +36,10 @@ function App() {
 
   ]
 
+  function addToCart(){
+    setCartCount( cartCount +1)
+  }
+
   function handleShowNewOnly(){
     setShowNewOnly(!showNewOnly)
     console.log(showNewOnly);
@@ -44,13 +49,13 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Header cartCount={cartCount}/>
         <Container className="py-5">
         <Button variant="dark" className="mb-5" onClick={handleShowNewOnly}>{showNewOnly ? "Voir tous les plats" : "Nouveautés seulement"}</Button>
           <Row>
             {filteredDishes.map((item, index)=>(
               <Col key={index} md={4}>
-                <Dish name={item.name} img={item.img} price={item.price}  isNew={item.isNew} />
+                <Dish name={item.name} img={item.img} price={item.price}  isNew={item.isNew} addToCart={addToCart} />
               </Col>
             ))}
           </Row>
