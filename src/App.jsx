@@ -38,10 +38,9 @@ function App() {
   function handleShowNewOnly(){
     setShowNewOnly(!showNewOnly)
     console.log(showNewOnly);
-    
   }
 
-  const filteredDishes = dishes.filter(dish => dish.stock > 0)
+  const filteredDishes = showNewOnly ? dishes.filter(dish => dish.stock > 0 && dish.isNew) : dishes.filter(dish => dish.stock > 0)
 
 
   return (
