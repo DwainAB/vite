@@ -4,10 +4,17 @@ import { Card, Badge, Button } from 'react-bootstrap';
 import "../assets/css/dish.scss"
 
 export default function Dish ({name, img, price, isNew}){
-  const { addToCart } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
 
+  const handleAddToCart = () => {
+    dispatch({ type: 'increment' });
+  };
 
-    return(
+  const handleRemoveFromCart = () => {
+    dispatch({ type: 'decrement' });
+  };
+
+  return(
     <Card>
         {isNew && <Badge bg="primary">Nouveau</Badge>}
         <Card.Img variant="top" src={img} />
@@ -16,7 +23,8 @@ export default function Dish ({name, img, price, isNew}){
           <Card.Text>
             {price}€
           </Card.Text>
-          <Button variant="dark" onClick={addToCart}>Ajouter au panier</Button>
+          <Button variant="dark" onClick={handleAddToCart}>Ajouter au panier</Button>
+          <Button variant="light" onClick={handleRemoveFromCart}>Retirer du panier</Button>
         </Card.Body>
       </Card>
     )
