@@ -37,7 +37,7 @@ function App() {
   ]
 
   function addToCart(){
-    setCartCount( cartCount +1)
+    setCartCount( prevCount => prevCount +1)
   }
 
   function handleShowNewOnly(){
