@@ -47,7 +47,7 @@ function App() {
     <>
       <Header/>
         <Container className="py-5">
-        <Button variant="dark" className="mb-5" onClick={handleShowNewOnly}>Nouveautés seulement</Button>
+        <Button variant="dark" className="mb-5" onClick={handleShowNewOnly}>{showNewOnly ? "Voir tous les plats" : "Nouveautés seulement"}</Button>
           <Row>
             {filteredDishes.map((item, index)=>(
               <Col key={index} md={4}>
