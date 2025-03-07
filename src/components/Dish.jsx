@@ -1,7 +1,10 @@
+import React, { useContext } from 'react';
+import { CartContext } from "./context/CartContext"
 import { Card, Badge, Button } from 'react-bootstrap';
 import "../assets/css/dish.scss"
 
-export default function Dish ({name, img, price, isNew, addToCart}){
+export default function Dish ({name, img, price, isNew}){
+  const { addToCart } = useContext(CartContext);
 
 
     return(
